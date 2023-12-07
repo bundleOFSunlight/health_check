@@ -1,4 +1,5 @@
 
-module.exports = (app, verifyToken) => {
-    app.use(`/check`, require(`../routes/0. common/1. check`));
+module.exports = (app) => {
+    app.use(`/one`, require(`../routes/0. common/1. method_one`));
+    app.use(`/two`, require(`../routes/0. common/1. method_two`));
 };

@@ -6,6 +6,16 @@ const bodyParser = require(`body-parser`);
 const rb = require(`@flexsolver/flexrb`);
 const app = express();
 
+const qp = require(`@flexsolver/flexqp2`);
+qp.presetConnection({
+	limit: process.env.DB_LIMIT,
+	host: process.env.DB_HOST,
+	user: process.env.DB_USERNAME,
+	password: process.env.DB_PASSWORD,
+	port: process.env.DB_PORT,
+	database: process.env.DB_DATABASE,
+});
+
 const cors = require(`cors`);
 
 app.use(bodyParser.json({ limit: `500mb` }));
@@ -97,6 +107,7 @@ app.use((req, res, next) => {
 app.use(logResponseBody);
 
 require(`./route_paths/0. check`)(app);
+require(`./controllers/scheduler`)(app);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

@@ -3,7 +3,7 @@
 /**
  * Module dependencies.
  */
-// require('../controllers/helpers/envCheck')
+require('../controllers/envCheck')
 var app = require('../app').app;
 var debug = require('debug')('backend-template:server');
 var http = require('http');
@@ -14,7 +14,7 @@ let server;
  * Get port from environment and store in Express.
  */
 
-var port = normalizePort(process.env.PORT || '9512');
+var port = normalizePort(process.env.PORT || '3100');
 app.set('port', port);
 console.log(`This project is currently running on port : ${port}`)
 if (cluster.isMaster && process.env.cluster) {
