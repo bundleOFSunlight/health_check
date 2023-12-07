@@ -5,7 +5,7 @@ const { fields } = require(`../../controllers/csv_generator/fields`);
 const qp = require(`@flexsolver/flexqp2`)
 const moment = require(`moment`)
 
-router.get(`/live`, async function (req, res, next) {
+router.get(`/download`, async function (req, res, next) {
     try {
         const data = await qp.select(`select id, health, readiness, instance, ping_timestamp from health_check where is_available`)
         const field = fields()
