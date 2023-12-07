@@ -41,6 +41,6 @@ The objective of this assignment is to:
 1. Check the CSV successfully downloaded
 1. Anything I misunderstood can inform me
 1. Method one can be ignore as it is not only for gitlab
-1. This repo is uploaded to my github: 
+1. This repo is uploaded to my github: https://github.com/bundleOFSunlight/health_check.git
 
 
