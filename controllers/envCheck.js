@@ -13,6 +13,8 @@ const envVarsSchema = joi
         DB_PASSWORD: joi.string().required(),
         DB_DATABASE: joi.string().required(),
         DB_LIMIT: joi.number().positive().required(),
+        GITLAB_TOKEN: joi.string().required(),
+        API_ENDPOINT: joi.string().required(),
     })
     .unknown();
 

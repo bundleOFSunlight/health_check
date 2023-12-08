@@ -2,8 +2,8 @@ const axios = require(`axios`);
 
 // In actual case I prefer Env viariable for Token and EndPoint
 // Sample example reference: GitLab API Doc https://docs.gitlab.com/ee/api/
-const gitlabApiToken = 'YOUR_GITLAB_API_TOKEN';
-const url = `https://gitlab.example.com/api/v4`
+const gitlabApiToken = process.env.API_ENDPOINT
+const url = process.env.API_ENDPOINT
 
 const axiosInstance = axios.create({
     headers: {
