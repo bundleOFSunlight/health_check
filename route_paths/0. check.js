@@ -1,5 +1,5 @@
 
 module.exports = (app) => {
-    app.use(`/one`, require(`../routes/0. common/1. method_one`));
-    app.use(`/two`, require(`../routes/0. common/2. method_two`));
+    app.use(`/optional`, require(`../routes/0. common/1. optional_method`));
+    app.use(`/report`, require(`../routes/0. common/2. method_two`));
 };

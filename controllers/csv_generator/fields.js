@@ -1,29 +1,32 @@
+const qp = require(`@flexsolver/flexqp2`)
 
-function fields() {
-    return [
+async function writeCSV() {
+    const data = await qp.select(`select id, health, readiness, instance, ping_timestamp from health_check where is_available`)
+    const fields = [
         {
             label: 'Id',
-            value: 'id'
+            value: `id`,
         },
         {
             label: 'Health',
-            value: 'health'
+            value: `health`,
         },
         {
             label: 'Readiness',
-            value: 'readiness'
+            value: `readiness`,
         },
         {
             label: 'Instance',
-            value: 'instance'
+            value: `instance`,
         },
         {
             label: 'Ping_Timestamp',
-            value: 'ping_timestamp'
-        }
+            value: `ping_timestamp`,
+        },
     ]
+    return { data, fields }
 }
 
 module.exports = {
-    fields: fields
+    writeCSV: writeCSV
 }
